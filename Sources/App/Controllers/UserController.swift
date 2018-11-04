@@ -25,6 +25,7 @@ final class UserController {
     
     //done
     func create(_ req: Request) throws -> Future<User> {
+        
         return try req.content.decode(User.self).flatMap { user in
             user.creationDate = Date()
             return user.save(on: req)

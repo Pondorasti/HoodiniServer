@@ -37,6 +37,12 @@ extension Intolerance {
     }
 }
 
+extension Intolerance {
+    var tags: Siblings<Intolerance, Recipe, RecipeIntolerance> {
+        return siblings()
+    }
+}
+
 extension Intolerance: Content { }
 extension Intolerance: Migration { }
 extension Intolerance: Parameter { }

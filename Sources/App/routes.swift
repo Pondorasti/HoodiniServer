@@ -14,5 +14,11 @@ public func routes(_ router: Router) throws {
     let intoleranceController = IntoleranceController()
     
     router.post("intolerances", use: intoleranceController.create)
+    
+    let recipeController = RecipeController()
+    
+    router.get("recipe", use: recipeController.list)
+    router.post("recipe", use: recipeController.create)
+    
 
 }

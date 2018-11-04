@@ -29,6 +29,8 @@ final class IntoleranceController {
                         //init an Intolerance
                         let intolerance = Intolerance(intoleranceForm: intoleranceForm)
                         
+                        intolerance.tags.query(on: req).all()
+                        
                         //use Future<Response>
                         //update the SQL Table with the new intolerance and refresh the User list
                         //                        return intolerance.save(on: req).map({ (_) in
