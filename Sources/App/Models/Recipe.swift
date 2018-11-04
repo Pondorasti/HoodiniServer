@@ -24,21 +24,21 @@ extension Recipe: Content {}
 extension Recipe: Migration {}
 extension Recipe: Parameter {}
 
-extension Recipe {
-    var tags: Siblings<Recipe, Intolerance, RecipeIntolerance> {
-        return siblings()
-    }
-}
-
-final class RecipeIntolerance: SQLitePivot {
-    typealias Left = Recipe
-    typealias Right = Intolerance
-    
-    var id: Int?
-    
-    static let leftIDKey: LeftIDKey = \.recipeID
-    static let rightIDKey: RightIDKey = \.intoleranceID
-    
-    var recipeID: Recipe.ID
-    var intoleranceID: Intolerance.ID
-}
+//extension Recipe {
+//    var tags: Siblings<Recipe, Intolerance, RecipeIntolerance> {
+//        return siblings()
+//    }
+//}
+//
+//final class RecipeIntolerance: SQLitePivot {
+//    typealias Left = Recipe
+//    typealias Right = Intolerance
+//
+//    var id: Int?
+//
+//    static let leftIDKey: LeftIDKey = \.recipeID
+//    static let rightIDKey: RightIDKey = \.intoleranceID
+//
+//    var recipeID: Recipe.ID
+//    var intoleranceID: Intolerance.ID
+//}

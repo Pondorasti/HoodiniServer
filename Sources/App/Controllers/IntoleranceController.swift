@@ -22,7 +22,7 @@ final class IntoleranceController {
                     .flatMap({ (user) in
                         
                         //unwrap userID
-                        guard let userID = try user?.requireID() else {
+                        guard let _ = try user?.requireID() else {
                             throw Abort(.badRequest)
                         }
                         
