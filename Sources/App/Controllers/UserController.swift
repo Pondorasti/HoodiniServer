@@ -44,5 +44,11 @@ final class UserController {
             return user.delete(on: req)
             }.transform(to: .ok)
     }
+    
+    func intolerances(_ req: Request) throws -> Future<[Intolerance]> {
+        return try req.parameters.next(User.self).flatMap { user in
+            return try user.intolerances.query(on: req).all()
+        }
+    }
 }
 
